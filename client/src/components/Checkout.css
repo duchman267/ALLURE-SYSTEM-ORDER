@@ -1,0 +1,143 @@
+.checkout {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.checkout h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.order-summary {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.order-summary h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.summary-item {
+  margin-bottom: 20px;
+}
+
+.summary-item p {
+  margin: 8px 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+.summary-item p strong {
+  color: #333;
+}
+
+.total-price {
+  border-top: 2px solid #eee;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.total-price h3 {
+  margin: 0;
+  color: #007bff;
+  font-size: 1.5rem;
+  border: none;
+  padding: 0;
+}
+
+.customer-form {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.customer-form h3 {
+  margin: 0 0 25px 0;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.checkout-actions {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.submit-order-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 8px rgba(0,123,255,0.3);
+}
+
+.submit-order-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,123,255,0.4);
+}
+
+.submit-order-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .checkout {
+    padding: 0 10px;
+  }
+  
+  .submit-order-btn {
+    width: 100%;
+    padding: 15px 20px;
+  }
+}

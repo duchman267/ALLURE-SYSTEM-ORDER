@@ -1,0 +1,293 @@
+.order-tracking {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.order-tracking h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.search-section {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.search-input {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.search-input input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.search-input input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.search-input button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.search-input button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.search-input button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  color: #721c24;
+}
+
+.error-message p {
+  margin: 0;
+}
+
+.order-result {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.order-header {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.status-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.order-info {
+  padding: 25px;
+  border-bottom: 1px solid #eee;
+}
+
+.info-section {
+  margin-bottom: 25px;
+}
+
+.info-section:last-child {
+  margin-bottom: 0;
+}
+
+.info-section h4 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 8px;
+}
+
+.info-section p {
+  margin: 8px 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+.info-section p strong {
+  color: #333;
+}
+
+.order-items {
+  padding: 25px;
+  border-bottom: 1px solid #eee;
+}
+
+.order-items h4 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.order-item:last-child {
+  margin-bottom: 0;
+}
+
+.item-info h5 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 1rem;
+}
+
+.item-info p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.item-price {
+  text-align: right;
+}
+
+.item-price p {
+  margin: 0;
+  font-weight: bold;
+  color: #007bff;
+  font-size: 1.1rem;
+}
+
+.order-total {
+  padding: 20px 25px;
+  background-color: #f8f9fa;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.order-total h3 {
+  margin: 0;
+  color: #007bff;
+  font-size: 1.5rem;
+}
+
+.status-timeline {
+  padding: 25px;
+}
+
+.status-timeline h4 {
+  margin: 0 0 25px 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #e9ecef;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 30px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -8px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #e9ecef;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px #e9ecef;
+}
+
+.timeline-item.completed .timeline-dot {
+  background-color: #28a745;
+  box-shadow: 0 0 0 2px #28a745;
+}
+
+.timeline-content h5 {
+  margin: 0 0 8px 0;
+  color: #333;
+  font-size: 1rem;
+}
+
+.timeline-content p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.timeline-item.completed .timeline-content h5 {
+  color: #28a745;
+}
+
+@media (max-width: 768px) {
+  .order-tracking {
+    padding: 10px;
+  }
+  
+  .search-input {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .search-input input,
+  .search-input button {
+    width: 100%;
+  }
+  
+  .order-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .order-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .item-price {
+    text-align: left;
+  }
+}
