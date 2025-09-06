@@ -155,8 +155,10 @@ router.post('/calculate-price', async (req, res) => {
             });
         }
 
-        const productPrice = pricing[0].harga_per_pcs * qty;
-        totalPrice += productPrice;
+        const basePrice = Number(pricing[0].harga_per_pcs);
+        const productPrice = basePrice * Number(qty);
+        totalPrice = Number(totalPrice) + productPrice;
+        
         breakdown.product = {
             harga_per_pcs: pricing[0].harga_per_pcs,
             qty: qty,
@@ -170,8 +172,8 @@ router.post('/calculate-price', async (req, res) => {
             `, [upgrade_id]);
 
             if (upgrade.length > 0) {
-                const upgradePrice = upgrade[0].harga_upgrade * qty;
-                totalPrice += upgradePrice;
+                const upgradePrice = Number(upgrade[0].harga_upgrade) * Number(qty);
+                totalPrice = Number(totalPrice) + upgradePrice;
                 breakdown.upgrade = {
                     harga_per_pcs: upgrade[0].harga_upgrade,
                     qty: qty,
@@ -187,7 +189,8 @@ router.post('/calculate-price', async (req, res) => {
             `, [packaging_id]);
 
             if (packaging.length > 0) {
-                totalPrice += packaging[0].harga_packaging;
+                const packagingPrice = Number(packaging[0].harga_packaging);
+                totalPrice = Number(totalPrice) + packagingPrice;
                 breakdown.packaging = {
                     harga: packaging[0].harga_packaging,
                     subtotal: packaging[0].harga_packaging

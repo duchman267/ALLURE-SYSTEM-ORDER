@@ -5,10 +5,11 @@ import PackagingSelection from './components/PackagingSelection';
 import Checkout from './components/Checkout';
 import OrderSuccess from './components/OrderSuccess';
 import OrderTracking from './components/OrderTracking';
+import AllureOrderPage from './components/AllureOrderPage';
 import './App.css';
 
 function App() {
-  const [currentView, setCurrentView] = useState('home'); // 'home' or 'tracking'
+  const [currentView, setCurrentView] = useState('allure'); // 'home', 'tracking', or 'allure'
   const [currentStep, setCurrentStep] = useState(1);
   const [orderData, setOrderData] = useState({});
 
@@ -55,6 +56,11 @@ function App() {
     }
   };
 
+  // If Allure view is selected, render only Allure component
+  if (currentView === 'allure') {
+    return <AllureOrderPage />;
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -62,10 +68,16 @@ function App() {
           <h1>Custom Product Store</h1>
           <nav className="main-nav">
             <button 
+              className={`nav-btn ${currentView === 'allure' ? 'active' : ''}`}
+              onClick={() => setCurrentView('allure')}
+            >
+              Allure Souvenir
+            </button>
+            <button 
               className={`nav-btn ${currentView === 'home' ? 'active' : ''}`}
               onClick={() => setCurrentView('home')}
             >
-              Pesan Produk
+              Multi-Step Order
             </button>
             <button 
               className={`nav-btn ${currentView === 'tracking' ? 'active' : ''}`}

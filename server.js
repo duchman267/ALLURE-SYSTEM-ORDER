@@ -27,6 +27,7 @@ app.use('/api/upload', require('./routes/upload'));
 app.use('/api/admin', require('./routes/admin'));
 app.use('/api/analytics', require('./routes/analytics'));
 app.use('/api/notifications', require('./routes/notifications'));
+app.use('/api/design-manager', require('./routes/design-manager'));
 
 // Health check
 app.get('/api/health', (req, res) => {
