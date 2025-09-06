@@ -5,56 +5,31 @@ const { pool } = require('../config/database');
 // GET /api/admin/orders - List semua pesanan untuk admin
 router.get('/orders', async (req, res) => {
     try {
-        const { status, page = 1, limit = 10 } = req.query;
-        const offset = (page - 1) * limit;
-
-        let whereClause = '';
-        let params = [];
-
-        if (status) {
-            whereClause = 'WHERE o.status = ?';
-            params.push(status);
-        }
-
-        // Get orders with pagination
+        // Simple query without pagination for now
         const [orders] = await pool.execute(`
             SELECT 
-                o.id,
-                o.order_number,
-                o.nama_pemesan,
-                o.kontak_pemesan,
-                o.email,
-                o.harga_total,
-                o.status,
-                o.created_at,
-                COUNT(od.id) as total_items
-            FROM orders o
-            LEFT JOIN order_details od ON o.id = od.order_id
-            ${whereClause}
-            GROUP BY o.id
-            ORDER BY o.created_at DESC
-            LIMIT ? OFFSET ?
-        `, [...params, parseInt(limit), parseInt(offset)]);
-
-        // Get total count for pagination
-        const [countResult] = await pool.execute(`
-            SELECT COUNT(*) as total
-            FROM orders o
-            ${whereClause}
-        `, params);
-
-        const totalOrders = countResult[0].total;
-        const totalPages = Math.ceil(totalOrders / limit);
+                id,
+                order_number,
+                nama_pemesan,
+                kontak_pemesan,
+                email,
+                harga_total,
+                status,
+                created_at
+            FROM orders
+            ORDER BY created_at DESC
+            LIMIT 20
+        `);
 
         res.json({
             success: true,
             data: {
                 orders: orders,
                 pagination: {
-                    current_page: parseInt(page),
-                    total_pages: totalPages,
-                    total_orders: totalOrders,
-                    per_page: parseInt(limit)
+                    current_page: 1,
+                    total_pages: 1,
+                    total_orders: orders.length,
+                    per_page: 20
                 }
             }
         });
